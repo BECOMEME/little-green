@@ -1,10 +1,25 @@
+import { Route, Routes } from 'react-router-dom';
+
 import "./globals.css";
+import LoginForm from './_auth/Form/loginForm';
+import RegisterForm from './_auth/Form/registerForm';
+import { Home } from './_root/Pages';
+import AuthLayoutForm from './_auth/authLayoutForm';
+
 
 const App = () => {
     return (
-        <h1 className="text-3xl font-bold underline">
-            Hello world!
-        </h1>
+        <main className="flex full_screen">
+            <Routes>
+                <Route element={<AuthLayoutForm />}>
+                    <Route path="/log-in" element={<LoginForm />} />
+                    <Route path="/register" element={<RegisterForm />} />
+
+                </Route>
+                <Route index element={<Home />} />
+            </Routes>
+
+        </main>
     )
 }
 
