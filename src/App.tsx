@@ -1,4 +1,4 @@
-import './global.css'
+import "/Users/stone/little-green/src";
 
 const App = () => {
     return (
