@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 
 import "./globals.css";
-import LoginForm from './_auth/Form/loginForm';
 import RegisterForm from './_auth/Form/registerForm';
 import { Home } from './_root/Pages';
 import AuthLayoutForm from './_auth/authLayoutForm';
+import LoginForm from './_auth/Form/LoginForm';
+import RootLayout from './_root/RootLayout';
 
 
 const App = () => {
@@ -14,9 +15,10 @@ const App = () => {
                 <Route element={<AuthLayoutForm />}>
                     <Route path="/log-in" element={<LoginForm />} />
                     <Route path="/register" element={<RegisterForm />} />
-
                 </Route>
-                <Route index element={<Home />} />
+                <Route element={<RootLayout />}>
+                    <Route index element={<Home />} />
+                </Route>
             </Routes>
 
         </main>
