@@ -1,9 +1,22 @@
-import React from 'react'
+import { Outlet, Navigate } from "react-router-dom";
+import React from "react";
 
 const AuthLayoutForm = () => {
-    return (
-        <div>AuthLayoutForm</div>
-    )
-}
+  const isAuthentic = false;
+  return (
+    <>
+      {isAuthentic ? (
+        <Navigate to="/" />
+      ) : (
+        <>
+          {" "}
+          <section>
+            <Outlet />
+          </section>
+        </>
+      )}
+    </>
+  );
+};
 
-export default AuthLayoutForm
+export default AuthLayoutForm;
